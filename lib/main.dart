@@ -40,15 +40,24 @@ class Desafio4 extends StatelessWidget {
             children: List.generate(3, (index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff2B4A8E), // Cor de fundo do botão
-                    shape: const CircleBorder(), // Botão circular
-                  ),
-                  onPressed: () {
-                    // Ação do botão
-                  },
-                  child: const Icon(Icons.add, color: Colors.white), // Ícone de "+"
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xff2B4A8E), // Cor de fundo do botão
+                        shape: const CircleBorder(), // Botão circular
+                      ),
+                      onPressed: () {
+                        // Ação do botão
+                      },
+                      child: const Icon(Icons.add, color: Colors.white), // Ícone de "+"
+                    ),
+                    const SizedBox(width: 8), // Espaço entre o ícone e o texto
+                    const Text(
+                      'Exemplo', // Texto de exemplo
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
                 ),
               );
             }),
@@ -85,15 +94,24 @@ class Desafio4 extends StatelessWidget {
             children: List.generate(3, (index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xff2B4A8E), // Cor de fundo do botão
-                    shape: const CircleBorder(), // Botão circular
-                  ),
-                  onPressed: () {
-                    // Ação do botão
-                  },
-                  child: const Icon(Icons.add, color: Colors.white), // Ícone de "+"
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xff2B4A8E), // Cor de fundo do botão
+                        shape: const CircleBorder(), // Botão circular
+                      ),
+                      onPressed: () {
+                        // Ação do botão
+                      },
+                      child: const Icon(Icons.add, color: Colors.white), // Ícone de "+"
+                    ),
+                    const SizedBox(width: 8), // Espaço entre o ícone e o texto
+                    const Text(
+                      'Ace', // Texto de exemplo
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
                 ),
               );
             }),
