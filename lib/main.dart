@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'inital_screen.dart';
+import 'first_screen.dart';
 import 'second_screen.dart';  
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       // Rotas para navegar entre as telas
       initialRoute: '/home', // Tela inicial
       routes: {
-        '/home': (context) => const InitialScreen(), // Primeira tela
+        '/home': (context) => const FirstScreen(), // Primeira tela
         '/game': (context) => const SecondScreen(),   // Segunda tela
       },
     );
