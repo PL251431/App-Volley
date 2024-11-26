@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import '../widgets/team_row.dart'; 
-import '../widgets/text_time.dart'; // Importar o novo widget
+import '../widgets/team_row.dart';
+import '../widgets/text_time.dart';
+import '../widgets/floating_button.dart';
+import '../widgets/start_button.dart';
+import '../widgets/header_ball.dart';
+
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
@@ -15,39 +19,18 @@ class FirstScreen extends StatelessWidget {
             width: 100,
             color: const Color(0xff00ADC3),
             child: const Center(
-            child: RotatedTime(title: 'TIMES'),
-  ),
-),
+              child: RotatedTime(title: 'TIMES'),
+            ),
+          ),
           // Conteúdo principal
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Logo e título no topo
-                Padding(
-                  padding: const EdgeInsets.only(top: 40.0),
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        'assets/imgs/ball.png', // Caminho do logo
-                        height: 80,
-                      ),
-                      const SizedBox(height: 10),
-                      const Text(
-                        "Volley do fim de semana",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'ConcertOne',
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                // Lista de times no centro
+                const HeaderWidget(),
+                
                 const Padding(
-                  padding:  EdgeInsets.only(left: 20.0),
+                  padding: EdgeInsets.only(left: 20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -63,6 +46,7 @@ class FirstScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 20.0),
                   child: Column(
                     children: [
+                      const SizedBox(height: 10),
                       const Text(
                         "Jogo Casado",
                         style: TextStyle(
@@ -72,27 +56,10 @@ class FirstScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xff2B4A8E),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 40, vertical: 15),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
+                      StartButton(
                         onPressed: () {
-                          // Navega para a próxima tela
                           Navigator.pushNamed(context, '/game');
                         },
-                        child: const Text(
-                          "Iniciar",
-                          style: TextStyle(
-                            fontFamily: 'ConcertOne',
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
                       ),
                     ],
                   ),
@@ -103,12 +70,10 @@ class FirstScreen extends StatelessWidget {
         ],
       ),
       // Botão de ação flutuante no canto inferior direito
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xff2B4A8E),
+      floatingActionButton: FloatingButton(
         onPressed: () {
-          // Ação ao pressionar "+"
+          // Lógica ao pressionar "+"
         },
-        child: const Icon(Icons.add, color: Colors.white),
       ),
     );
   }

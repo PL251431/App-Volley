@@ -8,17 +8,23 @@ class RotatedTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RotatedBox(
-      quarterTurns: 3,
+      quarterTurns: 4,
       child: Container(
+        width: 120, // Aumenta a largura do container
+        height: 150, // Faz o container ocupar toda a altura
         color: Colors.white.withOpacity(0.2), // Fundo translúcido
-        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
-        child: Text(
-          title,
-          style: const TextStyle(
-            fontFamily: 'ConcertOne',
-            fontSize: 24,
-            color: Colors.white,
-            letterSpacing: 2,
+        child: const Center(
+          child: RotatedBox(
+            quarterTurns: 3, // Rotaciona o texto 90 graus
+            child: Text(
+              "TIMES",
+              style: TextStyle(
+                fontFamily: 'ConcertOne',
+                fontSize: 36, // Aumenta o tamanho da fonte
+                color: Colors.white,
+                letterSpacing: 2, // Espaçamento entre letras
+              ),
+            ),
           ),
         ),
       ),

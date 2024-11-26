@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/first_screen.dart';
-import 'screens/second_screen.dart';  
+import 'screens/second_screen.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home', // Tela inicial
       routes: {
         '/home': (context) => const FirstScreen(), // Primeira tela
-        '/game': (context) => const SecondScreen(),   // Segunda tela
+        '/game': (context) => const SecondScreen(), // Segunda tela
       },
     );
   }
