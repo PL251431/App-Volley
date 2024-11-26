@@ -7,7 +7,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff00ADC3), // Cor de fundo azul
-      body: Row(
+      body: Row( 
         children: [
           // Lateral esquerda com "TIMES" rotacionado
           Container(
