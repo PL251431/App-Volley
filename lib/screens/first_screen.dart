@@ -6,23 +6,27 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff00ADC3), // Cor de fundo azul
-      body: Row( 
+      backgroundColor: const Color(0xff00ADC3), // Fundo azul
+      body: Row(
         children: [
-          // Lateral esquerda com "TIMES" rotacionado
+          // Lateral esquerda com "TIMES" rotacionado e fundo translúcido
           Container(
             width: 100,
             color: const Color(0xff00ADC3),
-            child: const Center(
+            child: Center(
               child: RotatedBox(
                 quarterTurns: 3, // Rotaciona o texto 90 graus
-                child:  Text(
-                  "TIMES",
-                  style: TextStyle(
-                    fontFamily: 'ConcertOne',
-                    fontSize: 24,
-                    color: Colors.white,
-                    letterSpacing: 2,
+                child: Container(
+                  color: Colors.white.withOpacity(0.2), // Fundo translúcido
+                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
+                  child: const Text(
+                    "TIMES",
+                    style: TextStyle(
+                      fontFamily: 'ConcertOne',
+                      fontSize: 24,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                    ),
                   ),
                 ),
               ),
@@ -55,12 +59,11 @@ class FirstScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Lista de times
+                // Lista de times no centro
                 Padding(
                   padding: const EdgeInsets.only(left: 20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       buildTeamRow('Sicranos', 3),
                       buildTeamRow('Autoconvidados', 3),
@@ -139,12 +142,24 @@ class FirstScreen extends StatelessWidget {
               color: Colors.yellow,
             ),
           ),
-          Text(
-            "$playerCount jogadores",
-            style: const TextStyle(
-              fontFamily: 'ConcertOne',
-              fontSize: 20,
-              color: Colors.blue,
+          RichText(
+            text: TextSpan(
+              text: '$playerCount',
+              style: const TextStyle(
+                fontFamily: 'ConcertOne',
+                fontSize: 24,
+                color: Colors.blue,
+              ),
+              children: const [
+                TextSpan(
+                  text: ' jogadores',
+                  style: TextStyle(
+                    fontFamily: 'ConcertOne',
+                    fontSize: 12,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

@@ -29,7 +29,7 @@ class SecondScreen extends StatelessWidget {
 
   // Estilos centralizados
   static const buttonBackgroundColor = Color(0xff2B4A8E);
-  static const textStyleWhite = TextStyle(color: Colors.white, fontFamily: 'ConcertOne');
+  static const textStyleWhite = TextStyle(color: Colors.white);
   static const textStyleBlue = TextStyle(color: Color(0xff2B4A8E), fontFamily: 'ConcertOne');
   static final buttonStyle = ElevatedButton.styleFrom(
     backgroundColor: buttonBackgroundColor,

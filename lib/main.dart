@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'first_screen.dart';
-import 'second_screen.dart';  
+import 'screens/first_screen.dart';
+import 'screens/second_screen.dart';  
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
