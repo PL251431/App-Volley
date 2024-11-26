@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../widgets/team_row.dart'; 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
@@ -60,15 +60,15 @@ class FirstScreen extends StatelessWidget {
                   ),
                 ),
                 // Lista de times no centro
-                Padding(
-                  padding: const EdgeInsets.only(left: 20.0),
+                const Padding(
+                  padding:  EdgeInsets.only(left: 20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      buildTeamRow('Sicranos', 3),
-                      buildTeamRow('Autoconvidados', 3),
-                      buildTeamRow('Ziraldos', 4),
-                      buildTeamRow('Sparrings', 5),
+                      TeamRow(teamName: 'Sicranos', playerCount: 3),
+                      TeamRow(teamName: 'Autoconvidados', playerCount: 3),
+                      TeamRow(teamName: 'Ziraldos', playerCount: 4),
+                      TeamRow(teamName: 'Sparrings', playerCount: 5),
                     ],
                   ),
                 ),
