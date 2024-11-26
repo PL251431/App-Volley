@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/team_row.dart'; 
+import '../widgets/text_time.dart'; // Importar o novo widget
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
@@ -13,25 +14,10 @@ class FirstScreen extends StatelessWidget {
           Container(
             width: 100,
             color: const Color(0xff00ADC3),
-            child: Center(
-              child: RotatedBox(
-                quarterTurns: 3, // Rotaciona o texto 90 graus
-                child: Container(
-                  color: Colors.white.withOpacity(0.2), // Fundo translúcido
-                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
-                  child: const Text(
-                    "TIMES",
-                    style: TextStyle(
-                      fontFamily: 'ConcertOne',
-                      fontSize: 24,
-                      color: Colors.white,
-                      letterSpacing: 2,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+            child: const Center(
+            child: RotatedTime(title: 'TIMES'),
+  ),
+),
           // Conteúdo principal
           Expanded(
             child: Column(
