@@ -35,6 +35,39 @@ class SecondScreen extends StatelessWidget {
     backgroundColor: buttonBackgroundColor,
     shape: const CircleBorder(),
   );
+// Gera os botões do topo (jogadores)
+  Widget buildTopButtons() {
+  final players = [
+    {'label': 'A', 'text': 'Ziraldos'},
+    {'label': 'B', 'text': 'Autoconvidados'}
+  ];
+
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: players.map((player) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        child: Column(
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white.withOpacity(0.7), // Fundo branco com transparência
+                shape: const CircleBorder(),
+              ),
+              onPressed: () {},
+              child: Text(
+                player['label']!,
+                style: textStyleBlue,
+              ),
+            ),
+            Text(player['text']!, style: textStyleBlue),
+          ],
+        ),
+      );
+    }).toList(),
+  );
+}
+
 
   // Gera os botões laterais (esquerda ou direita)
   Widget buildSideButtons(List<String> texts, {bool isLeft = true}) {
@@ -67,66 +100,61 @@ class SecondScreen extends StatelessWidget {
     );
   }
 
-  // Gera os botões do topo (jogadores)
-  Widget buildTopButtons() {
-    final players = [
-      {'label': 'A', 'text': 'ziraldos'},
-      {'label': 'B', 'text': 'Autoconvidados'}
-    ];
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: players.map((player) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: Column(
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  shape: const CircleBorder(),
-                ),
-                onPressed: () {},
-                child: Text(
-                  player['label']!,
-                  style: textStyleBlue,
-                ),
-              ),
-              Text(player['text']!, style: textStyleBlue),
-            ],
+  
+// Gera a quadra de vôlei com uma única linha vertical ao meio
+Widget buildVolleyballCourt() {
+  return Center(
+    child: Container(
+      width: 300,
+      height: 200,
+      decoration: BoxDecoration(
+        color: const Color(0xffF77859),
+        border: Border.all(color: Colors.white, width: 4),
+      ),
+      child: Stack(
+        children: [
+          // Linha vertical central (única divisão da quadra)
+          Positioned(
+            left: 150 - 2, // Ajustado para o centro da largura
+            top: 0,
+            bottom: 0,
+            child: Container(
+              width: 4,
+              color: Colors.white,
+            ),
           ),
-        );
-      }).toList(),
-    );
-  }
-
-  // Gera a quadra de vôlei com uma única linha vertical ao meio
-  Widget buildVolleyballCourt() {
-    return Center(
-      child: Container(
-        width: 300,
-        height: 200,
-        decoration: BoxDecoration(
-          color: const Color(0xffF77859),
-          border: Border.all(color: Colors.white, width: 4),
-        ),
-        child: Stack(
-          children: [
-            // Linha vertical central (única divisão da quadra)
-            Positioned(
-              left: 150 - 2, // Ajustado para o centro da largura
-              top: 0,
-              bottom: 0,
-              child: Container(
-                width: 4,
+          // Número no quadrante esquerdo
+          const Positioned(
+            left: 50, // Posição horizontal
+            top: 80,  // Posição vertical
+            child: Text(
+              '12',
+              style: TextStyle(
                 color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ],
-        ),
+          ),
+          // Número no quadrante direito
+          const Positioned(
+            left: 200, // Posição horizontal
+            top: 80,   // Posição vertical
+            child: Text(
+              '22',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {

@@ -13,28 +13,44 @@ class TeamRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          // Nome do time
           Text(
             teamName,
             style: const TextStyle(
               fontFamily: 'ConcertOne',
-              fontSize: 20,
+              fontSize: 24,
               color: Colors.yellow,
             ),
           ),
-          Text(
-            "$playerCount jogadores",
-            style: const TextStyle(
-              fontFamily: 'ConcertOne',
-              fontSize: 20,
-              color: Colors.blue,
-            ),
+          // Número e texto "jogadores"
+          Row(
+            children: [
+              Text(
+                '$playerCount', // Exibe o número de jogadores
+                style: const TextStyle(
+                  fontFamily: 'ConcertOne',
+                  fontSize: 32,
+                  color: Colors.blue,
+                ),
+              ),
+              const SizedBox(width: 5), // Espaço entre o número e o texto
+              const Text(
+                'jogadores',
+                style: TextStyle(
+                  fontFamily: 'ConcertOne',
+                  fontSize: 16,
+                  color: Colors.blue,
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 }
+ 
