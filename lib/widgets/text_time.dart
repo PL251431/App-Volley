@@ -20,7 +20,7 @@ class RotatedTime extends StatelessWidget {
               "TIMES",
               style: TextStyle(
                 fontFamily: 'ConcertOne',
-                fontSize: 36, 
+                fontSize: 36,
                 color: Colors.white,
                 letterSpacing: 2, // Espaçamento entre letras
               ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../widgets/top_buttons.dart';
 import '../widgets/side_buttons.dart';
-import '../widgets/volleyball_court.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
@@ -12,13 +11,16 @@ class SecondScreen extends StatefulWidget {
 }
 
 class _SecondScreenState extends State<SecondScreen> {
-  // Contadores para os lados esquerdo e direito
   final Map<String, int> leftCounters = {"Ace": 0, "Ataque": 0, "Bloqueio": 0, "Erro": 0};
   final Map<String, int> rightCounters = {"Ace": 0, "Ataque": 0, "Bloqueio": 0, "Erro": 0};
+  
+  bool isLeftTurn = true; // Indica de quem é a vez
 
-  // Atualiza o contador para o lado correto
   void updateCounter(String action, bool isLeft) {
     setState(() {
+      if (action == "Erro") {
+        isLeftTurn = !isLeftTurn; // Alterna a vez ao cometer erro
+      }
       (isLeft ? leftCounters : rightCounters)[action] =
           (isLeft ? leftCounters : rightCounters)[action]! + 1;
     });
@@ -26,7 +28,6 @@ class _SecondScreenState extends State<SecondScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Configurações de orientação da tela
     SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ModalRoute.of(context)!.addScopedWillPopCallback(() async {
@@ -40,18 +41,14 @@ class _SecondScreenState extends State<SecondScreen> {
       backgroundColor: const Color(0xff00ADC3),
       body: Row(
         children: [
-          // Botões da esquerda
           _buildSideButtons(isLeft: true, counters: leftCounters),
-          // Quadra no centro
           _buildCourt(),
-          // Botões da direita
           _buildSideButtons(isLeft: false, counters: rightCounters),
         ],
       ),
     );
   }
 
-  // Constrói o AppBar
   AppBar _buildAppBar() {
     return AppBar(
       backgroundColor: const Color(0xff00ADC3),
@@ -64,7 +61,6 @@ class _SecondScreenState extends State<SecondScreen> {
     );
   }
 
-  // Constrói os botões laterais
   Widget _buildSideButtons({required bool isLeft, required Map<String, int> counters}) {
     return Flexible(
       flex: 2,
@@ -77,7 +73,6 @@ class _SecondScreenState extends State<SecondScreen> {
     );
   }
 
-  // Constrói a quadra
   Widget _buildCourt() {
     return Flexible(
       flex: 6,
@@ -86,7 +81,11 @@ class _SecondScreenState extends State<SecondScreen> {
         children: [
           const TopButtons(),
           const Spacer(),
-          VolleyballCourt(leftSideScores: leftCounters, rightSideScores: rightCounters),
+          VolleyballCourt(
+            leftSideScores: leftCounters,
+            rightSideScores: rightCounters,
+            isLeftTurn: isLeftTurn, // Passa o estado atual
+          ),
           const Spacer(),
           const Text(
             "Tempo de jogo: 1:14'00",
@@ -106,6 +105,87 @@ class _SecondScreenState extends State<SecondScreen> {
           ),
           const SizedBox(height: 20),
         ],
+      ),
+    );
+  }
+}
+
+// Widget da quadra de vôlei
+class VolleyballCourt extends StatelessWidget {
+  final Map<String, int> leftSideScores;
+  final Map<String, int> rightSideScores;
+  final bool isLeftTurn;
+
+  const VolleyballCourt({
+    super.key,
+    required this.leftSideScores,
+    required this.rightSideScores,
+    required this.isLeftTurn,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    int leftTotal = leftSideScores.values.fold(0, (sum, value) => sum + value);
+    int rightTotal = rightSideScores.values.fold(0, (sum, value) => sum + value);
+
+    return Center(
+      child: Container(
+        width: 300,
+        height: 200,
+        decoration: BoxDecoration(
+          color: const Color(0xffF77859),
+          border: Border.all(color: Colors.white, width: 4),
+        ),
+        child: Stack(
+          children: [
+            // Linha central
+            Positioned(
+              left: 148,
+              top: 0,
+              bottom: 0,
+              child: Container(
+                width: 4,
+                color: Colors.white,
+              ),
+            ),
+            // Placar esquerdo
+            Positioned(
+              left: 50,
+              top: 80,
+              child: Text(
+                '$leftTotal',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            // Placar direito
+            Positioned(
+              left: 200,
+              top: 80,
+              child: Text(
+                '$rightTotal',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            // Bola de vôlei alternando de lado
+            Positioned(
+              left: isLeftTurn ? 55 : 200, // Alterna a posição
+              top: 30,
+              child: Image.asset(
+                'assets/imgs/ball.png',
+                width: 40,
+                height: 40,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class VolleyballCourt extends StatelessWidget {
   final Map<String, int> leftSideScores; // Pontuação do lado esquerdo
   final Map<String, int> rightSideScores; // Pontuação do lado direito
+  final bool isLeftTurn;
 
   const VolleyballCourt({
     super.key,
     required this.leftSideScores,
     required this.rightSideScores,
+    required this.isLeftTurn,
   });
 
   @override
@@ -50,6 +52,16 @@ class VolleyballCourt extends StatelessWidget {
                 ),
               ),
             ),
+            Positioned(
+              left: isLeftTurn ? 60 : 220, // Ajuste conforme necessário
+              top: 40,
+              child: Image.asset(
+                'assets/volleyball.png',
+                width: 40,
+                height: 40,
+              ),
+            ),
+
             // Placar no lado direito
             Positioned(
               left: 200,
