@@ -4,13 +4,9 @@ import 'screens/first_screen.dart';
 import 'screens/second_screen.dart';
 
 void main() {
+  // Garantir que o Flutter esteja completamente inicializado
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.landscapeRight,
-    DeviceOrientation.landscapeLeft,
-  ]).then((_) {
-    runApp(const MyApp());
-  });
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,13 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Desafio 4',
-      debugShowCheckedModeBanner: false,
-      // Rotas para navegar entre as telas
-      initialRoute: '/home', // Tela inicial
+      title: 'Avaliação 1', 
+      debugShowCheckedModeBanner: false, 
+      // Rota inicial do app (a primeira tela exibida)
+      initialRoute: '/home',
+      // Define as rotas para navegar entre as telas
       routes: {
-        '/home': (context) => const FirstScreen(), // Primeira tela
-        '/game': (context) => const SecondScreen(), // Segunda tela
+        '/home': (context) => const FirstScreen(), 
+        '/game': (context) => const SecondScreen(), 
       },
     );
   }
