@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 
 class VolleyballCourt extends StatelessWidget {
-  const VolleyballCourt({super.key});
+  final Map<String, int> leftSideScores; // Pontuação do lado esquerdo
+  final Map<String, int> rightSideScores; // Pontuação do lado direito
+
+  const VolleyballCourt({
+    super.key,
+    required this.leftSideScores,
+    required this.rightSideScores,
+  });
 
   @override
   Widget build(BuildContext context) {
+    // Soma total para exibição na quadra
+    int leftTotal = leftSideScores.values.fold(0, (sum, value) => sum + value);
+    int rightTotal =
+        rightSideScores.values.fold(0, (sum, value) => sum + value);
+
     return Center(
       child: Container(
         width: 300,
@@ -25,25 +37,26 @@ class VolleyballCourt extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            // Números nos quadrantes
-            const Positioned(
+            // Placar no lado esquerdo
+            Positioned(
               left: 50,
               top: 80,
               child: Text(
-                '12',
-                style: TextStyle(
+                '$leftTotal', // Soma total do lado esquerdo
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            const Positioned(
+            // Placar no lado direito
+            Positioned(
               left: 200,
               top: 80,
               child: Text(
-                '22',
-                style: TextStyle(
+                '$rightTotal', // Soma total do lado direito
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
