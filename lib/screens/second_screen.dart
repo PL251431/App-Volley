@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../widgets/top_buttons.dart';
 import '../widgets/side_buttons.dart';
 import '../widgets/volleyball_court.dart';
@@ -11,6 +12,22 @@ class SecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Configurar o modo paisagem ao entrar na tela
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+
+    // Restaura para o padrão vertical quando sair da tela
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ModalRoute.of(context)!.addScopedWillPopCallback(() async {
+        await SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+        ]);
+        return true;
+      });
+    });
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff00ADC3),

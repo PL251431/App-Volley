@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'screens/first_screen.dart';
-import 'screens/second_screen.dart';
+import 'screens/first_screen.dart'; 
+import 'screens/second_screen.dart'; 
 
 void main() {
   // Garantir que o Flutter esteja completamente inicializado
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Iniciar o app normalmente, sem forçar a orientação no nível global
   runApp(const MyApp());
 }
 

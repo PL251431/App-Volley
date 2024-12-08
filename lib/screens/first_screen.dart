@@ -3,7 +3,7 @@ import '../widgets/team_row.dart';
 import '../widgets/floating_button.dart';
 import '../widgets/start_button.dart';
 import '../widgets/header_ball.dart';
-import '../widgets/text_time.dart'; // Importa o widget RotatedTime
+import '../widgets/text_time.dart'; 
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
