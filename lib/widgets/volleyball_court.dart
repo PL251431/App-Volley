@@ -53,10 +53,10 @@ class VolleyballCourt extends StatelessWidget {
               ),
             ),
             Positioned(
-              left: isLeftTurn ? 60 : 220, // Ajuste conforme necessário
-              top: 40,
+              left: isLeftTurn ? 55 : 200, // Ajuste conforme necessário
+              top: 30,
               child: Image.asset(
-                'assets/volleyball.png',
+                'assets/imgs/ball.png',
                 width: 40,
                 height: 40,
               ),
