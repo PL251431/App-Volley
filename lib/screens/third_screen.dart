@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class ThirdScreen extends StatelessWidget {
   final String winner;
-  final VoidCallback onNewSet; // Função chamada ao iniciar novo set
-  final VoidCallback onFinish; // Função chamada ao clicar em "Terminar"
+  final VoidCallback onNewSet; 
+  final VoidCallback onFinish; 
 
   const ThirdScreen({
     super.key,

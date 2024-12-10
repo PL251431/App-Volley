@@ -16,7 +16,7 @@ class FirstScreen extends StatelessWidget {
         children: [
           // Lateral esquerda com "TIMES" rotacionado
           Padding(
-            padding: const EdgeInsets.only(left: 2.0), // Adiciona espaço à esquerda
+            padding: const EdgeInsets.only(left: 4.0), // Adiciona espaço à esquerda
             child: Container(
               color: const Color(0xff00ADC3),
               child: const Center(
@@ -32,7 +32,7 @@ class FirstScreen extends StatelessWidget {
                 const HeaderWidget(), // Cabeçalho
                 // Lista de times
                 const Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(5.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

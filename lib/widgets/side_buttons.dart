@@ -20,12 +20,15 @@ class SideButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 8.0), // Distância mínima das paredes
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Botões padrão
-          ...labels.map((label) => _buildActionButton(label, () => onButtonPressed(label))),
+          ...labels.map(
+            (label) => _buildActionButton(label, () => onButtonPressed(label)),
+          ),
           // Botão "Erro"
           _buildActionButton("Erro", onErrorPressed, isError: true),
         ],
@@ -33,15 +36,15 @@ class SideButtons extends StatelessWidget {
     );
   }
 
-  // Método auxiliar para criar um botão com texto
   Widget _buildActionButton(String label, VoidCallback onPressed, {bool isError = false}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0), // Mantém a distância vertical entre os botões
       child: Row(
         mainAxisAlignment: isLeft ? MainAxisAlignment.start : MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (isLeft) _buildButton(onPressed, isError),
-          const SizedBox(width: 8),
+          const SizedBox(width: 4), // Reduzida a distância entre botão e texto
           Text(label, style: textStyleWhite),
           if (!isLeft) _buildButton(onPressed, isError),
         ],
@@ -49,15 +52,19 @@ class SideButtons extends StatelessWidget {
     );
   }
 
-  // Método auxiliar para criar um botão redondo
   Widget _buildButton(VoidCallback onPressed, bool isError) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor:buttonBackgroundColor,
+        backgroundColor: buttonBackgroundColor,
         shape: const CircleBorder(),
+        padding: const EdgeInsets.all(10.0), // Mantém o tamanho padrão do botão
       ),
       onPressed: onPressed,
-      child: const Icon(Icons.add, color: Colors.white),
+      child: Icon(
+        isError ? Icons.remove : Icons.add,
+        color: Colors.white,
+        size: 18.0, // Mantém o tamanho do ícone padrão
+      ),
     );
   }
 }

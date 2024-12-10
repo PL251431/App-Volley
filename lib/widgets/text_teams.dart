@@ -10,7 +10,7 @@ class TextTeams extends StatelessWidget {
     return RotatedBox(
       quarterTurns: 4, // Rotaciona a box
       child: Container(
-        width: 80, // Largura do container
+        width: 100, // Largura do container
         height: 240, // Altura do container
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.4), // Fundo translúcido

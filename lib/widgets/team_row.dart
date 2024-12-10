@@ -13,7 +13,7 @@ class TeamRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 1.0), // Espaço menor entre linhas
+      padding: const EdgeInsets.symmetric(vertical: 0), // Espaço menor entre linhas
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end, // Alinhamento à direita
         children: [
@@ -47,7 +47,7 @@ class TeamRow extends StatelessWidget {
                   const SizedBox(width: 2), // Espaço entre número e "jogadores"
                   // Nome "jogadores" escrito verticalmente
                   const RotatedBox(
-                    quarterTurns: 3, // Rotaciona o texto 90° no sentido horário
+                    quarterTurns: 3, 
                     child: Text(
                       'Jogadores', // Texto completo
                       style: TextStyle(
