@@ -79,9 +79,11 @@ class FourthScreen extends StatelessWidget {
 
   Widget _buildColumn(String title, List<List<String>> rows, {List<String>? times}) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         CircleAvatar(
           backgroundColor: Colors.white,
+          radius: 18,
           child: Text(
             title,
             style: const TextStyle(
@@ -95,22 +97,22 @@ class FourthScreen extends StatelessWidget {
           final row = entry.value;
           final time = times != null ? times[entry.key] : null;
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            padding: const EdgeInsets.symmetric(vertical: 6.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                if (time == null)
-                  Expanded(
-                    child: Text(
-                      row[0],
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                Expanded(
+                  flex: 2,
+                  child: Text(
+                    row[0],
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
+                ),
                 Expanded(
+                  flex: 1,
                   child: Text(
                     row[1],
                     style: const TextStyle(
@@ -123,6 +125,7 @@ class FourthScreen extends StatelessWidget {
                 ),
                 if (time != null)
                   Expanded(
+                    flex: 1,
                     child: Text(
                       time,
                       style: const TextStyle(
@@ -135,7 +138,7 @@ class FourthScreen extends StatelessWidget {
               ],
             ),
           );
-        }).toList(),
+        }),
       ],
     );
   }
@@ -143,10 +146,10 @@ class FourthScreen extends StatelessWidget {
   Widget _buildFooter() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      color: Colors.white.withOpacity(0.7),
-      child: Row(
+      color: Colors.white.withOpacity(0.5),
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const [
+        children: [
           Text(
             "Ziraldos: 3",
             style: TextStyle(

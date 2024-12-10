@@ -12,7 +12,7 @@ class RotatedTime extends StatelessWidget {
       child: Container(
         width: 120, // Largura do container
         height: 240, // Altura do container
-        color: Colors.white.withOpacity(0.2), // Fundo translúcido
+        color: Colors.white.withOpacity(0.4), // Fundo translúcido
         child: const Center(
           child: RotatedBox(
             quarterTurns: 3, // Rotaciona o texto

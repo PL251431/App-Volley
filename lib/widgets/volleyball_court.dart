@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VolleyballCourt extends StatelessWidget {
-  final Map<String, int> leftSideScores; // Pontuação do lado esquerdo
-  final Map<String, int> rightSideScores; // Pontuação do lado direito
+  final Map<String, int> leftSideScores; 
+  final Map<String, int> rightSideScores; 
   final bool isLeftTurn;
 
   const VolleyballCourt({

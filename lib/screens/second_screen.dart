@@ -4,7 +4,7 @@ import '../widgets/top_buttons.dart';
 import '../widgets/side_buttons.dart';
 import '../widgets/volleyball_court.dart';
 import '../screens/third_screen.dart';
-import '../screens/fourth_screen.dart'; // Importa a FourthScreen
+import '../screens/fourth_screen.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
@@ -87,6 +87,7 @@ class _SecondScreenState extends State<SecondScreen> {
       backgroundColor: const Color(0xff00ADC3),
       body: Row(
         children: [
+          // Botões do lado esquerdo
           Flexible(
             flex: 2,
             child: SideButtons(
@@ -96,24 +97,29 @@ class _SecondScreenState extends State<SecondScreen> {
               onErrorPressed: () => updateCounter("Erro", false),
             ),
           ),
+          // Corpo central
           Flexible(
             flex: 6,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Botões superiores com nomes dos times
                 const TopButtons(),
                 const Spacer(),
+                // Quadra de vôlei com placar
                 VolleyballCourt(
                   leftSideScores: leftCounters,
                   rightSideScores: rightCounters,
                   isLeftTurn: isLeftTurn,
                 ),
                 const Spacer(),
+                // Tempo de jogo
                 const Text(
                   "Tempo de jogo: 1:14'00",
-                  style: TextStyle(color: Colors.white, fontSize: 10, fontFamily: 'ConcertOne'),
+                  style: TextStyle(color: Colors.white, fontSize: 14, fontFamily: 'ConcertOne'),
                 ),
                 const SizedBox(height: 10),
+                // Botão "Placar Geral"
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff2B4A8E),
@@ -136,6 +142,7 @@ class _SecondScreenState extends State<SecondScreen> {
               ],
             ),
           ),
+          // Botões do lado direito
           Flexible(
             flex: 2,
             child: SideButtons(
