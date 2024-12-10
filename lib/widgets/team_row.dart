@@ -13,7 +13,7 @@ class TeamRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0), // Espaço menor entre linhas
+      padding: const EdgeInsets.symmetric(vertical: 1.0), // Espaço menor entre linhas
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end, // Alinhamento à direita
         children: [
@@ -44,7 +44,7 @@ class TeamRow extends StatelessWidget {
                       color:  Color(0xff2B4A8E),
                     ),
                   ),
-                  const SizedBox(width: 6), // Espaço entre número e "jogadores"
+                  const SizedBox(width: 2), // Espaço entre número e "jogadores"
                   // Nome "jogadores" escrito verticalmente
                   const RotatedBox(
                     quarterTurns: 3, // Rotaciona o texto 90° no sentido horário
@@ -54,7 +54,7 @@ class TeamRow extends StatelessWidget {
                         fontFamily: 'ConcertOne',
                         fontSize: 8, // Ajuste de tamanho para combinar com o design
                         color:  Color(0xff2B4A8E),
-                        letterSpacing: 1, // Espaçamento entre as letras
+                        letterSpacing: 0, // Espaçamento entre as letras
                       ),
                     ),
                   ),
