@@ -8,25 +8,28 @@ class FooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min, // Garante que o tamanho do widget seja compacto
-      mainAxisAlignment: MainAxisAlignment.center, // Centraliza verticalmente
-      crossAxisAlignment: CrossAxisAlignment.center, // Centraliza horizontalmente
-      children: [
-        const Text(
-          "Jogo Casado",
-          textAlign: TextAlign.center, // Alinha o texto no centro
-          style: TextStyle(
-            fontFamily: 'ConcertOne',
-            color: Colors.white,
-            fontSize: 18,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 40.0), // Afasta o botão da parte inferior da tela
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center, // Centraliza verticalmente
+        crossAxisAlignment: CrossAxisAlignment.center, // Centraliza horizontalmente
+        children: [
+          const Text(
+            "Jogo Casado",
+            textAlign: TextAlign.center, // Alinha o texto no centro
+            style: TextStyle(
+              fontFamily: 'ConcertOne',
+              color: Colors.white,
+              fontSize: 20,
+            ),
           ),
-        ),
-        const SizedBox(height: 10),
-        StartButton(
-          onPressed: onStartPressed,
-        ),
-      ],
+          const SizedBox(height: 15), // Espaçamento entre o texto e o botão
+          StartButton(
+            onPressed: onStartPressed,
+          ),
+        ],
+      ),
     );
   }
 }
