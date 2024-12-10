@@ -4,6 +4,7 @@ import '../widgets/top_buttons.dart';
 import '../widgets/side_buttons.dart';
 import '../widgets/volleyball_court.dart';
 import '../screens/third_screen.dart';
+import '../screens/fourth_screen.dart'; // Importa a FourthScreen
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
@@ -15,8 +16,8 @@ class SecondScreen extends StatefulWidget {
 class _SecondScreenState extends State<SecondScreen> {
   final Map<String, int> leftCounters = {"Ace": 0, "Ataque": 0, "Bloqueio": 0, "Erro": 0};
   final Map<String, int> rightCounters = {"Ace": 0, "Ataque": 0, "Bloqueio": 0, "Erro": 0};
-  final String leftTeamName = "Ziraldos"; // Nome do time esquerdo
-  final String rightTeamName = "Autoconvidados"; // Nome do time direito
+  final String leftTeamName = "Ziraldos";
+  final String rightTeamName = "Autoconvidados";
   bool isLeftTurn = true;
 
   void updateCounter(String action, bool isLeft) {
@@ -27,7 +28,7 @@ class _SecondScreenState extends State<SecondScreen> {
       (isLeft ? leftCounters : rightCounters)[action] =
           (isLeft ? leftCounters : rightCounters)[action]! + 1;
 
-      _checkWinner(); // Verifica se há um vencedor
+      _checkWinner();
     });
   }
 
@@ -36,7 +37,7 @@ class _SecondScreenState extends State<SecondScreen> {
     int rightTotal = rightCounters.values.fold(0, (sum, value) => sum + value);
 
     if (leftTotal >= 25 || rightTotal >= 25) {
-      String winner = leftTotal >= 25 ? leftTeamName : rightTeamName; // Usa o nome do time
+      String winner = leftTotal >= 25 ? leftTeamName : rightTeamName;
       _showWinnerDialog(winner);
     }
   }
@@ -47,7 +48,7 @@ class _SecondScreenState extends State<SecondScreen> {
       barrierDismissible: false,
       builder: (context) {
         return ThirdScreen(
-          winner: winner, // Passa o nome do time vencedor
+          winner: winner,
           onNewSet: _resetGame,
           onFinish: _endGame,
         );
@@ -64,7 +65,7 @@ class _SecondScreenState extends State<SecondScreen> {
   }
 
   void _endGame() {
-    Navigator.popUntil(context, (route) => route.isFirst); // Volta à primeira tela
+    Navigator.popUntil(context, (route) => route.isFirst);
   }
 
   @override
@@ -121,7 +122,14 @@ class _SecondScreenState extends State<SecondScreen> {
                       side: const BorderSide(color: Colors.white, width: 2.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FourthScreen(), // Navega para a FourthScreen
+                      ),
+                    );
+                  },
                   child: const Text('Placar Geral', style: TextStyle(color: Colors.white)),
                 ),
                 const SizedBox(height: 20),
