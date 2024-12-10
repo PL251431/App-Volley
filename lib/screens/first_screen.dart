@@ -3,7 +3,7 @@ import '../widgets/team_row.dart';
 import '../widgets/floating_button.dart';
 import '../widgets/header_ball.dart';
 import '../widgets/text_teams.dart';
-import '../widgets/footer_widget.dart';
+import '../widgets/footer_widget.dart'; 
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -20,7 +20,7 @@ class FirstScreen extends StatelessWidget {
             child: Container(
               color: const Color(0xff00ADC3),
               child: const Center(
-                child: TextTeams(title: 'TIMES'), // Usa o widget TextTeams
+                child: TextTeams(title: 'TIMES'), // Usa o widget RotatedTime
               ),
             ),
           ),
@@ -43,7 +43,7 @@ class FirstScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Spacer(), // Empurra os widgets acima para cima
+                // Substituímos o rodapé original pelo FooterWidget
                 FooterWidget(
                   onStartPressed: () {
                     Navigator.pushNamed(context, '/game'); // Vai para a próxima tela
