@@ -15,7 +15,7 @@ class HeaderWidget extends StatelessWidget {
             'assets/imgs/ball.png', // Caminho do logo
             height: 60, // Ajuste do tamanho do logo
           ),
-          const SizedBox(width: 10), // Espaçamento entre logo e texto
+          const SizedBox(width: 15), // Espaçamento entre logo e texto
           // Título e subtítulo
           const Column(
             crossAxisAlignment: CrossAxisAlignment.start, // Alinhado à esquerda
@@ -25,7 +25,7 @@ class HeaderWidget extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'ConcertOne',
                   color: Colors.white,
-                  fontSize: 28, // Tamanho da fonte do título principal
+                  fontSize: 40, // Tamanho da fonte do título principal
                   fontWeight: FontWeight.bold,
                 ),
               ),

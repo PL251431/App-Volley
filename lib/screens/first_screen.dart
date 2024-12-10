@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../widgets/team_row.dart';
 import '../widgets/floating_button.dart';
-import '../widgets/start_button.dart';
 import '../widgets/header_ball.dart';
-import '../widgets/text_time.dart'; 
+import '../widgets/text_teams.dart';
+import '../widgets/footer_widget.dart'; 
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -15,11 +15,13 @@ class FirstScreen extends StatelessWidget {
       body: Row(
         children: [
           // Lateral esquerda com "TIMES" rotacionado
-          Container(
-            width: 100,
-            color: const Color(0xff00ADC3),
-            child: const Center(
-              child: RotatedTime(title: 'TIMES'), // Usa o widget RotatedTime
+          Padding(
+            padding: const EdgeInsets.only(left: 2.0), // Adiciona espaço à esquerda
+            child: Container(
+              color: const Color(0xff00ADC3),
+              child: const Center(
+                child: TextTeams(title: 'TIMES'), // Usa o widget RotatedTime
+              ),
             ),
           ),
           // Conteúdo principal
@@ -30,7 +32,7 @@ class FirstScreen extends StatelessWidget {
                 const HeaderWidget(), // Cabeçalho
                 // Lista de times
                 const Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(10.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -41,24 +43,11 @@ class FirstScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Rodapé com título e botão
-                Column(
-                  children: [
-                    const Text(
-                      "Jogo Casado",
-                      style: TextStyle(
-                        fontFamily: 'ConcertOne',
-                        color: Colors.white,
-                        fontSize: 18,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    StartButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/game'); // Vai para a próxima tela
-                      },
-                    ),
-                  ],
+                // Substituímos o rodapé original pelo FooterWidget
+                FooterWidget(
+                  onStartPressed: () {
+                    Navigator.pushNamed(context, '/game'); // Vai para a próxima tela
+                  },
                 ),
               ],
             ),
