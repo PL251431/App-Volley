@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Avaliação 1', 
+      theme: ThemeData(
+        fontFamily: 'ConcertOne'
+      ),
       debugShowCheckedModeBanner: false, 
       // Rota inicial do app (a primeira tela exibida)
       initialRoute: '/home',

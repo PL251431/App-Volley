@@ -15,7 +15,7 @@ class SideButtons extends StatelessWidget {
   });
 
   static const buttonBackgroundColor = Color(0xff2B4A8E);
-  static const textStyleWhite = TextStyle(color: Colors.white);
+  static const textStyleWhite = TextStyle(color: Colors.white, fontSize: 10 );
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class SideButtons extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (isLeft) _buildButton(onPressed, isError),
-          const SizedBox(width: 4), // Reduzida a distância entre botão e texto
+          const SizedBox(width: 2), // Reduzida a distância entre botão e texto
           Text(label, style: textStyleWhite),
           if (!isLeft) _buildButton(onPressed, isError),
         ],
