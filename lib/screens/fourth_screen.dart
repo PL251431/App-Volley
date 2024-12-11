@@ -31,8 +31,7 @@ class FourthScreen extends StatelessWidget {
               child: Text(
                 "PLACAR GERAL",
                 style: TextStyle(
-                  fontSize: 20
-            ,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff2B4A8E), // Azul escuro para o título
                   fontFamily: 'ConcertOne',
@@ -80,7 +79,7 @@ class FourthScreen extends StatelessWidget {
 
                           // Coluna A
                           Positioned(
-                            left: 60,
+                            left: 50,
                             top: 30,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -129,7 +128,7 @@ class FourthScreen extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            right: 45,
+                            right: 35,
                             top: 30,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -199,54 +198,103 @@ class FourthScreen extends StatelessWidget {
             Flexible(
               flex: 3,
               child: Container(
+                decoration: BoxDecoration(
+                  border: const Border.symmetric(
+                      horizontal: BorderSide(color: Colors.white, width: 2)),
+                  color: Colors.white.withOpacity(0.5), // Defina a cor aqui
+                ),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.7),
-                  border: Border.all(color: Colors.white, width: 2),
-                ),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      "Ziraldos: 3",
-                      style: TextStyle(
-                        fontSize: 25
-                  ,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontFamily: 'ConcertOne',
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          "Ziraldos: ",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: 'ConcertOne',
+                          ),
+                        ),
+                        Text(
+                          "3",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff2B4A8E),
+                            fontFamily: 'ConcertOne',
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      "Sicranos: 1",
-                      style: TextStyle(
-                        fontSize: 25
-                  ,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontFamily: 'ConcertOne',
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          "Sicranos: ",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: 'ConcertOne',
+                          ),
+                        ),
+                        Text(
+                          "1",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff2B4A8E),
+                            fontFamily: 'ConcertOne',
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      "Autoconvidados: 8",
-                      style: TextStyle(
-                        fontSize: 25
-                  ,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontFamily: 'ConcertOne',
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          "Atoconvidados: ",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: 'ConcertOne',
+                          ),
+                        ),
+                        Text(
+                          "8",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff2B4A8E),
+                            fontFamily: 'ConcertOne',
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      "Sparrings: 8",
-                      style: TextStyle(
-                        fontSize: 25
-                  ,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontFamily: 'ConcertOne',
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          "Sparrings: ",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: 'ConcertOne',
+                          ),
+                        ),
+                        Text(
+                          "8",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff2B4A8E),
+                            fontFamily: 'ConcertOne',
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
