@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class FourthScreen extends StatelessWidget {
@@ -34,146 +35,155 @@ class FourthScreen extends StatelessWidget {
               fontFamily: 'ConcertOne',
             ),
           ),
-          Center(
-            child: Container(
-              width: 300,
-              height: 200,
-              decoration: BoxDecoration(
-                color: const Color(0xffF77859), // Fundo laranja
-                border: Border.all(color: Colors.white, width: 4),
-              ),
-              child: Stack(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  // Linha central
-                  Positioned(
-                    left: 148,
-                    top: 0,
-                    bottom: 0,
-                    child: Container(
-                      width: 4,
-                      color: Colors.white,
-                    ),
-                  ),
-
-                  // Coluna A
-                  Positioned(
-                    left: 20,
-                    top: 20,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 18,
-                          child: Text(
-                            "A",
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'ConcertOne',
-                            ),
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Text("Ziraldos", style: _textStyle()),
-                            const SizedBox(width: 20),
-                            Text("25", style: _highlightStyle()),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text("Ziraldos", style: _textStyle()),
-                            const SizedBox(width: 20),
-                            Text("25", style: _highlightStyle()),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text("Ziraldos", style: _textStyle()),
-                            const SizedBox(width: 20),
-                            Text("10", style: _highlightStyle()),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text("Sparrings", style: _textStyle()),
-                            const SizedBox(width: 20),
-                            Text("25", style: _highlightStyle()),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  // Coluna B
-                  Positioned(
-                    right: 20,
-                    top: 20,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: Colors.white,
-                          radius: 18,
-                          child: Text(
-                            "B",
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'ConcertOne',
-                            ),
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Text("10", style: _highlightStyleYellow()),
-                            const SizedBox(width: 10),
-                            Text("Sparrings", style: _textStyle()),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text("10", style: _highlightStyleYellow()),
-                            const SizedBox(width: 10),
-                            Text("Sicranos", style: _textStyle()),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text("25", style: _highlightStyleYellow()),
-                            const SizedBox(width: 10),
-                            Text("Autoconvidados", style: _textStyle()),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text("10", style: _highlightStyleYellow()),
-                            const SizedBox(width: 10),
-                            Text("Autoconvidados", style: _textStyle()),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  // Tempo lado direito
-                  Positioned(
-                    right: 20,
-                    bottom: 20,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text("0:24'90", style: _timeStyle()),
-                        Text("0:14'23", style: _timeStyle()),
-                        Text("0:35'04", style: _timeStyle()),
-                        Text("0:11'29", style: _timeStyle()),
-                      ],
-                    ),
-                  ),
+                  Icon(Icons.bar_chart, color:  Colors.white,),
+                  Icon(Icons.bar_chart, color:  Colors.white,),
+                  Icon(Icons.bar_chart, color:  Colors.white,),
+                  Icon(Icons.bar_chart, color:  Colors.white,),
                 ],
               ),
-            ),
+              Flexible(
+                flex: 4,
+                child: Container(
+                  width: 300,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffF77859), // Fundo laranja
+                    border: Border.all(color: Colors.white, width: 4),
+                  ),
+                  child: Stack(
+                    children: [
+                      // Linha central
+                      Positioned(
+                        left: 148,
+                        top: 0,
+                        bottom: 0,
+                        child: Container(
+                          width: 4,
+                          color: Colors.white,
+                        ),
+                      ),
+
+                      // Coluna A
+                      Positioned(
+                        left: 20,
+                        top: 20,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 18,
+                              child: Text(
+                                "A",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'ConcertOne',
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text("Ziraldos", style: _textStyle()),
+                                const SizedBox(width: 20),
+                                Text("25", style: _highlightStyle()),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text("Ziraldos", style: _textStyle()),
+                                const SizedBox(width: 20),
+                                Text("25", style: _highlightStyle()),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text("Ziraldos", style: _textStyle()),
+                                const SizedBox(width: 20),
+                                Text("10", style: _highlightStyle()),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text("Sparrings", style: _textStyle()),
+                                const SizedBox(width: 20),
+                                Text("25", style: _highlightStyle()),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Coluna B
+                      Positioned(
+                        right: 20,
+                        top: 20,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 18,
+                              child: Text(
+                                "B",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'ConcertOne',
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text("10", style: _highlightStyleYellow()),
+                                const SizedBox(width: 10),
+                                Text("Sparrings", style: _textStyle()),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text("10", style: _highlightStyleYellow()),
+                                const SizedBox(width: 10),
+                                Text("Sicranos", style: _textStyle()),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text("25", style: _highlightStyleYellow()),
+                                const SizedBox(width: 10),
+                                Text("Autoconvidados", style: _textStyle()),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text("10", style: _highlightStyleYellow()),
+                                const SizedBox(width: 10),
+                                Text("Autoconvidados", style: _textStyle()),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text("0:24'90", style: _timeStyle()),
+                  Text("0:14'23", style: _timeStyle()),
+                  Text("0:35'04", style: _timeStyle()),
+                  Text("0:11'29", style: _timeStyle()),
+                ],
+              ),
+            ],
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -255,7 +265,7 @@ TextStyle _highlightStyleYellow() {
 
 TextStyle _timeStyle() {
   return const TextStyle(
-    fontSize: 14,
+    fontSize: 20,
     fontWeight: FontWeight.normal,
     color: Colors.white,
     fontFamily: 'ConcertOne',
