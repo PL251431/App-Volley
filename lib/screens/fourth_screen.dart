@@ -31,7 +31,8 @@ class FourthScreen extends StatelessWidget {
               child: Text(
                 "PLACAR GERAL",
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 20
+            ,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff2B4A8E), // Azul escuro para o título
                   fontFamily: 'ConcertOne',
@@ -200,43 +201,50 @@ class FourthScreen extends StatelessWidget {
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                color: Colors.white.withOpacity(0.7),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.7),
+                  border: Border.all(color: Colors.white, width: 2),
+                ),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
                       "Ziraldos: 3",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 25
+                  ,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xff2B4A8E),
+                        color: Colors.white,
                         fontFamily: 'ConcertOne',
                       ),
                     ),
                     Text(
                       "Sicranos: 1",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 25
+                  ,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xff2B4A8E),
+                        color: Colors.white,
                         fontFamily: 'ConcertOne',
                       ),
                     ),
                     Text(
                       "Autoconvidados: 8",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 25
+                  ,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xff2B4A8E),
+                        color: Colors.white,
                         fontFamily: 'ConcertOne',
                       ),
                     ),
                     Text(
                       "Sparrings: 8",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 25
+                  ,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xff2B4A8E),
+                        color: Colors.white,
                         fontFamily: 'ConcertOne',
                       ),
                     ),
@@ -253,7 +261,7 @@ class FourthScreen extends StatelessWidget {
 
 TextStyle _textStyle() {
   return const TextStyle(
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontFamily: 'ConcertOne',
@@ -262,7 +270,7 @@ TextStyle _textStyle() {
 
 TextStyle _highlightStyle() {
   return const TextStyle(
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: FontWeight.bold,
     color: Color(0xff2B4A8E),
     fontFamily: 'ConcertOne',
@@ -271,7 +279,7 @@ TextStyle _highlightStyle() {
 
 TextStyle _highlightStyleYellow() {
   return const TextStyle(
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: FontWeight.bold,
     color: Colors.yellow,
     fontFamily: 'ConcertOne',

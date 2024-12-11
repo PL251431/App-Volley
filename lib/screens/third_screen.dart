@@ -97,7 +97,7 @@ class ThirdScreen extends StatelessWidget {
           child: const Text(
             'Novo Set',
             style: TextStyle(
-              color: Colors.orange,
+              color: Colors.yellow,
               fontFamily: 'ConcertOne', // Fonte aplicada
             ),
           ),
