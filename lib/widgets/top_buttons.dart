@@ -6,6 +6,7 @@ class TopButtons extends StatelessWidget {
   static const textStyleBlue = TextStyle(
     color: Color(0xff2B4A8E),
     fontFamily: 'ConcertOne',
+    fontSize: 20,
   );
 
   @override

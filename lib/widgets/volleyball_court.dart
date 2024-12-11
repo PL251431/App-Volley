@@ -19,7 +19,7 @@ class VolleyballCourt extends StatelessWidget {
     return Center(
       child: Container(
         width: 300, // Largura total da quadra
-        height: 190, // Altura total da quadra
+        height: 160, // Altura total da quadra
         decoration: BoxDecoration(
           color: const Color(0xffF77859), // Cor de fundo da quadra
           border: Border.all(color: Colors.white, width: 4), // Borda branca ao redor

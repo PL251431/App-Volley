@@ -15,7 +15,7 @@ class SideButtons extends StatelessWidget {
   });
 
   static const buttonBackgroundColor = Color(0xff2B4A8E);
-  static const textStyleWhite = TextStyle(color: Colors.white, fontSize: 10 );
+  static const textStyleWhite = TextStyle(color: Colors.white, fontSize: 30 );
 
   @override
   Widget build(BuildContext context) {
