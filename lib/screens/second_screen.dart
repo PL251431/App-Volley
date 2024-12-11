@@ -9,7 +9,7 @@ import '../screens/first_screen.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
-
+  
   @override
   State<SecondScreen> createState() => _SecondScreenState();
 }
@@ -63,6 +63,18 @@ class _SecondScreenState extends State<SecondScreen> {
 
   void _endGame() {
     Navigator.popUntil(context, (route) => route.isFirst);
+  }
+
+@override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+  }
+
+  @override
+  void dispose() {
+    SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+    super.dispose();
   }
 
   @override
