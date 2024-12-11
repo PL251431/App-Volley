@@ -31,7 +31,7 @@ class FourthScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.blue, // Azul escuro para o título
+              color: Color(0xff2B4A8E), // Azul escuro para o título
               fontFamily: 'ConcertOne',
             ),
           ),
@@ -82,7 +82,7 @@ class FourthScreen extends StatelessWidget {
                               child: Text(
                                 "A",
                                 style: TextStyle(
-                                  color: Colors.blue,
+                                  color: Color(0xff2B4A8E),
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'ConcertOne',
                                 ),
@@ -133,7 +133,7 @@ class FourthScreen extends StatelessWidget {
                               child: Text(
                                 "B",
                                 style: TextStyle(
-                                  color: Colors.blue,
+                                  color: Color(0xff2B4A8E),
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'ConcertOne',
                                 ),
@@ -196,7 +196,7 @@ class FourthScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: Color(0xff2B4A8E),
                     fontFamily: 'ConcertOne',
                   ),
                 ),
@@ -205,7 +205,7 @@ class FourthScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: Color(0xff2B4A8E),
                     fontFamily: 'ConcertOne',
                   ),
                 ),
@@ -214,7 +214,7 @@ class FourthScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: Color(0xff2B4A8E),
                     fontFamily: 'ConcertOne',
                   ),
                 ),
@@ -223,7 +223,7 @@ class FourthScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: Color(0xff2B4A8E),
                     fontFamily: 'ConcertOne',
                   ),
                 ),
@@ -249,7 +249,7 @@ TextStyle _highlightStyle() {
   return const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
-    color: Colors.blue,
+    color: Color(0xff2B4A8E),
     fontFamily: 'ConcertOne',
   );
 }
