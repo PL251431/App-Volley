@@ -39,7 +39,7 @@ class FourthScreen extends StatelessWidget {
               width: 300,
               height: 200,
               decoration: BoxDecoration(
-                color: Colors.orangeAccent, // Fundo laranja
+                color: const Color(0xffF77859), // Fundo laranja
                 border: Border.all(color: Colors.white, width: 4),
               ),
               child: Stack(
