@@ -5,6 +5,7 @@ import '../widgets/side_buttons.dart';
 import '../widgets/volleyball_court.dart';
 import '../screens/third_screen.dart';
 import '../screens/fourth_screen.dart';
+import '../screens/first_screen.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
@@ -16,15 +17,12 @@ class SecondScreen extends StatefulWidget {
 class _SecondScreenState extends State<SecondScreen> {
   final Map<String, int> leftCounters = {"Ace": 0, "Ataque": 0, "Bloqueio": 0, "Erro": 0};
   final Map<String, int> rightCounters = {"Ace": 0, "Ataque": 0, "Bloqueio": 0, "Erro": 0};
+
   final String leftTeamName = "Ziraldos";
   final String rightTeamName = "Autoconvidados";
-  bool isLeftTurn = true;
 
   void updateCounter(String action, bool isLeft) {
     setState(() {
-      if (action == "Erro") {
-        isLeftTurn = !isLeftTurn;
-      }
       (isLeft ? leftCounters : rightCounters)[action] =
           (isLeft ? leftCounters : rightCounters)[action]! + 1;
 
@@ -60,7 +58,6 @@ class _SecondScreenState extends State<SecondScreen> {
     setState(() {
       leftCounters.updateAll((key, value) => 0);
       rightCounters.updateAll((key, value) => 0);
-      isLeftTurn = true;
     });
   }
 
@@ -78,16 +75,24 @@ class _SecondScreenState extends State<SecondScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const FirstScreen()),
+              (route) => false,
+            );
+          },
         ),
         actions: [
-          IconButton(icon: const Icon(Icons.settings, color: Colors.white), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.settings, color: Colors.white),
+            onPressed: () {},
+          ),
         ],
       ),
       backgroundColor: const Color(0xff00ADC3),
       body: Row(
         children: [
-          // Botões do lado esquerdo
           Flexible(
             flex: 2,
             child: SideButtons(
@@ -97,29 +102,24 @@ class _SecondScreenState extends State<SecondScreen> {
               onErrorPressed: () => updateCounter("Erro", false),
             ),
           ),
-          // Corpo central
           Flexible(
             flex: 6,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Botões superiores com nomes dos times
                 const TopButtons(),
                 const Spacer(),
-                // Quadra de vôlei com placar
                 VolleyballCourt(
                   leftSideScores: leftCounters,
                   rightSideScores: rightCounters,
-                  isLeftTurn: isLeftTurn,
+
                 ),
                 const Spacer(),
-                // Tempo de jogo
                 const Text(
                   "Tempo de jogo: 1:14'00",
                   style: TextStyle(color: Colors.white, fontSize: 14, fontFamily: 'ConcertOne'),
                 ),
                 const SizedBox(height: 10),
-                // Botão "Placar Geral"
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff2B4A8E),
@@ -132,7 +132,7 @@ class _SecondScreenState extends State<SecondScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const FourthScreen(), // Navega para a FourthScreen
+                        builder: (context) => const FourthScreen(),
                       ),
                     );
                   },
@@ -142,7 +142,6 @@ class _SecondScreenState extends State<SecondScreen> {
               ],
             ),
           ),
-          // Botões do lado direito
           Flexible(
             flex: 2,
             child: SideButtons(

@@ -19,7 +19,7 @@ class FooterWidget extends StatelessWidget {
             "Jogo Casado",
             textAlign: TextAlign.center, // Alinha o texto no centro
             style: TextStyle(
-              fontFamily: 'ConcertOne',
+              fontFamily: 'ConcertOne', // Fonte Concert One aplicada
               color: Colors.white,
               fontSize: 20,
             ),

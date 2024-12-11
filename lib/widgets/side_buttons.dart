@@ -60,8 +60,8 @@ class SideButtons extends StatelessWidget {
         padding: const EdgeInsets.all(10.0), // Mantém o tamanho padrão do botão
       ),
       onPressed: onPressed,
-      child: Icon(
-        isError ? Icons.remove : Icons.add,
+      child: const Icon(
+        Icons.add,
         color: Colors.white,
         size: 18.0, // Mantém o tamanho do ícone padrão
       ),
