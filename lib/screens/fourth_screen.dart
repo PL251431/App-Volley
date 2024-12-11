@@ -8,6 +8,7 @@ class FourthScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff00ADC3),
+        toolbarHeight: 40,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
@@ -22,8 +23,8 @@ class FourthScreen extends StatelessWidget {
       ),
       backgroundColor: const Color(0xff00ADC3),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const SizedBox(height: 10),
           const Text(
             "PLACAR GERAL",
             style: TextStyle(
@@ -33,7 +34,6 @@ class FourthScreen extends StatelessWidget {
               fontFamily: 'ConcertOne',
             ),
           ),
-          const SizedBox(height: 20),
           Center(
             child: Container(
               width: 300,
@@ -74,7 +74,6 @@ class FourthScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 10),
                         Row(
                           children: [
                             Text("Ziraldos", style: _textStyle()),
@@ -126,7 +125,6 @@ class FourthScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 10),
                         Row(
                           children: [
                             Text("10", style: _highlightStyleYellow()),
@@ -177,7 +175,6 @@ class FourthScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 20),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             color: Colors.white.withOpacity(0.7),
