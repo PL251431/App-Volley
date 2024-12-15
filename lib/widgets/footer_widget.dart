@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/start_button.dart'; // Certifique-se de que o StartButton está importado corretamente
+import '../widgets/start_button.dart';
 
 class FooterWidget extends StatelessWidget {
   final VoidCallback onStartPressed;
@@ -9,22 +9,22 @@ class FooterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 40.0), // Afasta o botão da parte inferior da tela
+      padding: const EdgeInsets.only(bottom: 40.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center, // Centraliza verticalmente
-        crossAxisAlignment: CrossAxisAlignment.center, // Centraliza horizontalmente
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const Text(
             "Jogo Casado",
-            textAlign: TextAlign.center, // Alinha o texto no centro
+            textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: 'ConcertOne', // Fonte Concert One aplicada
+              fontFamily: 'ConcertOne',
               color: Colors.white,
               fontSize: 20,
             ),
           ),
-          const SizedBox(height: 15), // Espaçamento entre o texto e o botão
+          const SizedBox(height: 15),
           StartButton(
             onPressed: onStartPressed,
           ),

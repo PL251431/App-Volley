@@ -8,27 +8,27 @@ class TextTeams extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RotatedBox(
-      quarterTurns: 4, // Rotaciona a box
+      quarterTurns: 4,
       child: Container(
-        width: 100, // Largura do container
-        height: 240, // Altura do container
+        width: 100,
+        height: 240,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.4), // Fundo translúcido
+          color: Colors.white.withOpacity(0.4),
           border: Border.all(
-            color: Colors.white, 
-            width: 1, // Espessura 
+            color: Colors.white,
+            width: 1,
           ),
         ),
         child: const Center(
           child: RotatedBox(
-            quarterTurns: 3, // Rotaciona o texto
+            quarterTurns: 3,
             child: Text(
               "TIMES",
               style: TextStyle(
                 fontFamily: 'ConcertOne',
                 fontSize: 40,
                 color: Colors.white,
-                letterSpacing: 2, // Espaçamento entre letras
+                letterSpacing: 2,
               ),
             ),
           ),

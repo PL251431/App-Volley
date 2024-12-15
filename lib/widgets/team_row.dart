@@ -13,15 +13,13 @@ class TeamRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0), // Espaço menor entre linhas
+      padding: const EdgeInsets.symmetric(vertical: 0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end, // Alinhamento à direita
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          // Nome do time e jogadores
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Nome do time
               Text(
                 teamName,
                 style: const TextStyle(
@@ -30,31 +28,28 @@ class TeamRow extends StatelessWidget {
                   color: Colors.yellow,
                 ),
               ),
-              const SizedBox(width: 10), // Espaço entre o nome do time e o número
-              // Número e texto "jogadores"
+              const SizedBox(width: 10),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Número dos jogadores
                   Text(
-                    '$playerCount', // Exibe o número de jogadores
+                    '$playerCount',
                     style: const TextStyle(
                       fontFamily: 'ConcertOne',
                       fontSize: 45,
-                      color:  Color(0xff2B4A8E),
+                      color: Color(0xff2B4A8E),
                     ),
                   ),
-                  const SizedBox(width: 2), // Espaço entre número e "jogadores"
-                  // Nome "jogadores" escrito verticalmente
+                  const SizedBox(width: 2),
                   const RotatedBox(
-                    quarterTurns: 3, 
+                    quarterTurns: 3,
                     child: Text(
-                      'Jogadores', // Texto completo
+                      'Jogadores',
                       style: TextStyle(
                         fontFamily: 'ConcertOne',
-                        fontSize: 8, // Ajuste de tamanho para combinar com o design
-                        color:  Color(0xff2B4A8E),
-                        letterSpacing: 0, // Espaçamento entre as letras
+                        fontSize: 8,
+                        color: Color(0xff2B4A8E),
+                        letterSpacing: 0,
                       ),
                     ),
                   ),

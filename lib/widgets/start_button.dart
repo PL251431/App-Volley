@@ -7,16 +7,16 @@ class StartButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center( // Centraliza o botão
+    return Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xff2B4A8E), // Cor de fundo do botão
+          backgroundColor: const Color(0xff2B4A8E),
           padding: const EdgeInsets.symmetric(horizontal: 65, vertical: 20),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10), // Bordas arredondadas
-            side: const BorderSide( // Define a borda
-              color: Colors.white, // Cor da borda
-              width: 2, // Espessura da borda
+            borderRadius: BorderRadius.circular(10),
+            side: const BorderSide(
+              color: Colors.white,
+              width: 2,
             ),
           ),
         ),
@@ -26,7 +26,7 @@ class StartButton extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'ConcertOne',
             fontSize: 18,
-            color: Colors.white, // Cor do texto
+            color: Colors.white,
           ),
         ),
       ),

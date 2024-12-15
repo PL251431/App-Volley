@@ -12,36 +12,33 @@ class VolleyballCourt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Soma total para exibição na quadra
     int leftTotal = leftSideScores.values.fold(0, (sum, value) => sum + value);
     int rightTotal = rightSideScores.values.fold(0, (sum, value) => sum + value);
 
     return Center(
       child: Container(
-        width: 300, // Largura total da quadra
-        height: 160, // Altura total da quadra
+        width: 300,
+        height: 160,
         decoration: BoxDecoration(
-          color: const Color(0xffF77859), // Cor de fundo da quadra
-          border: Border.all(color: Colors.white, width: 4), // Borda branca ao redor
+          color: const Color(0xffF77859),
+          border: Border.all(color: Colors.white, width: 4),
         ),
         child: Stack(
           children: [
-            // Linha central perfeitamente alinhada
             Positioned(
-              left: (145), // Centraliza a linha baseada na largura do contêiner
+              left: 145,
               top: 0,
               bottom: 0,
               child: Container(
-                width: 4, // Largura da linha
-                color: Colors.white, // Cor da linha
+                width: 4,
+                color: Colors.white,
               ),
             ),
-            // Placar no lado esquerdo
             Positioned(
               left: 50,
-              top: 100, // Ajustado para mover o número mais para baixo
+              top: 100,
               child: Text(
-                '$leftTotal', // Soma total do lado esquerdo
+                '$leftTotal',
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -49,22 +46,20 @@ class VolleyballCourt extends StatelessWidget {
                 ),
               ),
             ),
-            // Indicador de bola (sempre no lado direito)
             Positioned(
-              left: 165, // Posicionado no lado direito
-              top: 30, // Centralizado verticalmente no quadrante direito
+              left: 165,
+              top: 30,
               child: Image.asset(
                 'assets/imgs/ball.png',
                 width: 40,
                 height: 40,
               ),
             ),
-            // Placar no lado direito
             Positioned(
               left: 175,
-              top: 100, // Ajustado para mover o número mais para baixo
+              top: 100,
               child: Text(
-                '$rightTotal', // Soma total do lado direito
+                '$rightTotal',
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 30,

@@ -6,26 +6,23 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,	
-      crossAxisAlignment:
-          CrossAxisAlignment.center, // Alinha logo e texto verticalmente
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        // Logo
         Image.asset(
-          'assets/imgs/ball.png', // Caminho do logo
-          height: 60, // Ajuste do tamanho do logo
+          'assets/imgs/ball.png',
+          height: 60,
         ),
-        const SizedBox(width: 15), // Espaçamento entre logo e texto
-        // Título e subtítulo
+        const SizedBox(width: 15),
         const Column(
-          crossAxisAlignment: CrossAxisAlignment.start, // Alinhado à esquerda
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Volley",
               style: TextStyle(
                 fontFamily: 'ConcertOne',
                 color: Colors.white,
-                fontSize: 40, // Tamanho da fonte do título principal
+                fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -34,7 +31,7 @@ class HeaderWidget extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'ConcertOne',
                 color: Colors.white,
-                fontSize: 14, // Tamanho menor para o subtítulo
+                fontSize: 14,
               ),
             ),
           ],
