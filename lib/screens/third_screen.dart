@@ -18,7 +18,7 @@ class ThirdScreen extends StatelessWidget {
       backgroundColor: Colors.white.withOpacity(0.5), // Fundo branco com transparência
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: const BorderSide(color: Colors.white, width: 2.0), // Borda branca ao redor do modal
+        side: const BorderSide(color: Colors.white, width: 2.0), 
       ),
       title: const Center(
         child: Text(
@@ -26,7 +26,7 @@ class ThirdScreen extends StatelessWidget {
           style: TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            fontFamily: 'ConcertOne', // Fonte aplicada
+            fontFamily: 'ConcertOne', 
             color: Color(0xff2B4A8E),
           ),
         ),
@@ -41,18 +41,18 @@ class ThirdScreen extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'ConcertOne', // Fonte aplicada
+                fontFamily: 'ConcertOne', 
                 color: Color(0xff2B4A8E),
               ),
             ),
             const SizedBox(height: 10),
             const Align(
-              alignment: Alignment.centerRight, // Alinha o texto "VENCEU" à direita
+              alignment: Alignment.centerRight, 
               child: Text(
                 'VENCEU',
                 style: TextStyle(
                   fontSize: 15,
-                  fontFamily: 'ConcertOne', // Fonte aplicada
+                  fontFamily: 'ConcertOne', 
                   color: Color(0xff2B4A8E),
                 ),
               ),
@@ -78,7 +78,7 @@ class ThirdScreen extends StatelessWidget {
             'Terminar',
             style: TextStyle(
               color: Colors.white,
-              fontFamily: 'ConcertOne', // Fonte aplicada
+              fontFamily: 'ConcertOne', 
             ),
           ),
         ),
@@ -98,7 +98,7 @@ class ThirdScreen extends StatelessWidget {
             'Novo Set',
             style: TextStyle(
               color: Colors.yellow,
-              fontFamily: 'ConcertOne', // Fonte aplicada
+              fontFamily: 'ConcertOne', 
             ),
           ),
         ),

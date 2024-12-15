@@ -18,7 +18,7 @@ class _FirstScreenState extends State<FirstScreen> {
   @override
   void initState() {
     super.initState();
-    // Define a orientação para retrato apenas
+    // Define a orientação para retrato 
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   }
 
@@ -34,22 +34,19 @@ class _FirstScreenState extends State<FirstScreen> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                    left: 4.0), // Adiciona espaço à esquerda
+                    left: 4.0), 
                 child: Container(
                   color: const Color(0xff00ADC3),
                   child: const Center(
                     child:
-                        TextTeams(title: 'TIMES'), // Usa o widget RotatedTime
+                        TextTeams(title: 'TIMES'), 
                   ),
                 ),
               ),
-              // Conteúdo principal
               const Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Cabeçalho
-                    // Lista de times
                     Padding(
                       padding: EdgeInsets.all(5.0),
                       child: Column(
@@ -62,7 +59,6 @@ class _FirstScreenState extends State<FirstScreen> {
                         ],
                       ),
                     ),
-                    // Substituímos o rodapé original pelo FooterWidget
                   ],
                 ),
               ),
@@ -75,10 +71,10 @@ class _FirstScreenState extends State<FirstScreen> {
           ),
         ],
       ),
-      // Botão flutuante
+      // Botão de add
       floatingActionButton: FloatingButton(
         onPressed: () {
-          // Ação ao pressionar "+"
+          
         },
       ),
     );

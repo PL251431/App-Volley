@@ -6,7 +6,6 @@ void main() {
   // Garantir que o Flutter esteja completamente inicializado
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Iniciar o app normalmente, sem forçar a orientação no nível global
   runApp(const MyApp());
 }
 
@@ -21,9 +20,9 @@ class MyApp extends StatelessWidget {
         fontFamily: 'ConcertOne'
       ),
       debugShowCheckedModeBanner: false, 
-      // Rota inicial do app (a primeira tela exibida)
+      // Definindo a rota incial
       initialRoute: '/home',
-      // Define as rotas para navegar entre as telas
+      // Define as rotas de navegação
       routes: {
         '/home': (context) => const FirstScreen(), 
         '/game': (context) => const SecondScreen(), 

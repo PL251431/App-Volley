@@ -33,7 +33,7 @@ class FourthScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff2B4A8E), // Azul escuro para o título
+                  color: Color(0xff2B4A8E), 
                   fontFamily: 'ConcertOne',
                 ),
               ),
@@ -61,7 +61,7 @@ class FourthScreen extends StatelessWidget {
                       width: 350,
                       height: 200,
                       decoration: BoxDecoration(
-                        color: const Color(0xffF77859), // Fundo laranja
+                        color: const Color(0xffF77859), 
                         border: Border.all(color: Colors.white, width: 4),
                       ),
                       child: Stack(
@@ -201,7 +201,7 @@ class FourthScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: const Border.symmetric(
                       horizontal: BorderSide(color: Colors.white, width: 2)),
-                  color: Colors.white.withOpacity(0.5), // Defina a cor aqui
+                  color: Colors.white.withOpacity(0.5), 
                 ),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
